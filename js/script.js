@@ -28,3 +28,16 @@ $(function(){
     });
 });
 // - - - - - - - - -end of animation for search form - - - - - - - - - - - -
+function serch (){
+  //clear result means to make results area and button equal to empty for each time we search something new clear last search result
+  $('#results').html('');
+  $('#buttons').html('');
+
+  //get form input
+  var q = $('#query').val();
+
+  //run Get Request on API
+  $.get("https://www.googleapis.com/youtube/v3/search?part=snippet&q=coco&type=video%2Cchannel%2Cplaylist&key=AIzaSyAk59PuGj3pkTEeyyktVe25uX0VqjvlDCQ",
+  
+  );
+}
