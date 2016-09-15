@@ -26,9 +26,13 @@ $(function(){
 
       }
     });
+    //preventDefault fuction prevent default behavior of the form and it doesn't actually submit so I can test any action before finalizing
+    $('#search-form').submit(function(e){
+      e.preventDefault();
+    });
 });
 // - - - - - - - - -end of animation for search form - - - - - - - - - - - -
-function serch (){
+function search (){
   //clear result means to make results area and button equal to empty for each time we search something new clear last search result
   $('#results').html('');
   $('#buttons').html('');
@@ -37,7 +41,18 @@ function serch (){
   var q = $('#query').val();
 
   //run Get Request on API
-  $.get("https://www.googleapis.com/youtube/v3/search?part=snippet&q=coco&type=video%2Cchannel%2Cplaylist&key=AIzaSyAk59PuGj3pkTEeyyktVe25uX0VqjvlDCQ",
-  
+  $.get("https://www.googleapis.com/youtube/v3/search?part=snippet&q=q&type=video%2Cchannel%2Cplaylist&key=AIzaSyAk59PuGj3pkTEeyyktVe25uX0VqjvlDCQ",
+    //now pass data from upper request to data function
+    function(data){
+      //Make variable "nextPageToken", and "previousPageToken" to make them equal to next and last data and excute them by next and prev buttons
+      // var nextPageToken = data.nextPageToken;
+      // var prexPageToken = data.prevPageToken;
+      console.log(data);
+
+    }
+
+
+
+
   );
 }
