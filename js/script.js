@@ -53,13 +53,12 @@ function search (){
     //this each loop is a callBack from response data to tell what to do with data callBack
     //this form of writting each loop is to call array with name items and choose the data of that array
       $.each(data.items, function(i, item){
+      //Building HTML output
+      //custom fuction for data output wich created seperatly later but use it here
+      var output = getOutput(item);
+      //display result after getting output
+      $('#results').append(output);
       });
-
-
     }
-
-
-
-
   );
 }
