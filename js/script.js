@@ -41,13 +41,20 @@ function search (){
   var q = $('#query').val();
 
   //run Get Request on API
-  $.get("https://www.googleapis.com/youtube/v3/search?part=snippet&q=q&type=video%2Cchannel%2Cplaylist&key=AIzaSyAk59PuGj3pkTEeyyktVe25uX0VqjvlDCQ",
+  $.getJSON("https://www.googleapis.com/youtube/v3/search?part=snippet&q=q&type=video%2Cchannel%2Cplaylist&key=AIzaSyAk59PuGj3pkTEeyyktVe25uX0VqjvlDCQ",
     //now pass data from upper request to data function
+    //getJSON always comes in a way wich cary anonymos function to manepulate data
     function(data){
       //Make variable "nextPageToken", and "previousPageToken" to make them equal to next and last data and excute them by next and prev buttons
-      // var nextPageToken = data.nextPageToken;
-      // var prexPageToken = data.prevPageToken;
+       var nextPageToken = data.nextPageToken;
+       var prexPageToken = data.prevPageToken;
       console.log(data);
+    //using each loop to show each items (wich contains 5 array) from the youtube data
+    //this each loop is a callBack from response data to tell what to do with data callBack
+    //this form of writting each loop is to call array with name items and choose the data of that array
+      $.each(data.items, function(i, item){
+      });
+
 
     }
 
