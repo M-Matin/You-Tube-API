@@ -62,3 +62,15 @@ function search (){
     }
   );
 }
+
+//building getOutput wich is going to be run in each loop
+function getOutput (item){
+  //Defining all variables (everything we need to parse from json file)
+  //for accessing to each video we need to ask them for the specific data from the whole json file
+  var videoId = item.id.videoId;// in the json file from API we have item and we have id and then videoId so thats the way we have access to it
+  var title = item.snippet.title; //title is in item and then snippet and then title
+  var description = item.snippet.description;
+  var thumb = item.snippet.thumbnails.high.url;
+  var channelTitle = item.snippet.channelTitle;
+  var videoDate = item.snippet.publishedAt;
+}
