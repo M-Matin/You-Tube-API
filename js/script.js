@@ -57,7 +57,7 @@ function search (){
       //custom fuction for data output wich created seperatly later but use it here
       var output = getOutput(item);
       //display result after getting output
-      $('#results').append(output);
+      $('#results').append(output);//output is defined in below
       });
     }
   );
@@ -69,8 +69,22 @@ function getOutput (item){
   //for accessing to each video we need to ask them for the specific data from the whole json file
   var videoId = item.id.videoId;// in the json file from API we have item and we have id and then videoId so thats the way we have access to it
   var title = item.snippet.title; //title is in item and then snippet and then title
-  var description = item.snippet.description;
-  var thumb = item.snippet.thumbnails.high.url;
-  var channelTitle = item.snippet.channelTitle;
+  var description = item.snippet.description;//parse description from snippet
+  var thumb = item.snippet.thumbnails.high.url;//parse high url from snippet
+  var channelTitle = item.snippet.channelTitle;//parse channelTitle from snipet
   var videoDate = item.snippet.publishedAt;
+  //build output string
+  var output = "<li>" +
+  '<div class = list-left> ' +
+  '<img src="'+ thumb +'">' +
+  '</div>'+
+  '<div class = "list-right">' +
+  '<h3>'+title+'</h3>'
+  '<small>by<span class="cTitle"'+channelTitle+'</span> on '+videoDate+'</small>'+
+  '<p>'+description+'</p>'+
+  '</div>' +
+  '</li>' +
+  '<div class= "clearfix"</div>'+
+  '';
+  return output;
 }
