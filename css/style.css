@@ -113,3 +113,9 @@ footer{
 	float: left;
 	width: 20%;
 }
+
+.list-left img{
+	width: 100%;
+	padding: 3px;
+	border: solid #ccc 1px;
+}
