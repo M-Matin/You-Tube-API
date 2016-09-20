@@ -74,12 +74,13 @@ function getOutput (item){
   var channelTitle = item.snippet.channelTitle;//parse channelTitle from snipet
   var videoDate = item.snippet.publishedAt;
   //build output string
+  //the way you want all the info apear in #result
   var output = "<li>" +
   '<div class = list-left> ' +
   '<img src="'+ thumb +'">' +
   '</div>'+
   '<div class = "list-right">' +
-  '<h3>'+title+'</h3>'
+  '<h3>'+title+'</h3>'+
   '<small>by<span class="cTitle"'+channelTitle+'</span> on '+videoDate+'</small>'+
   '<p>'+description+'</p>'+
   '</div>' +
