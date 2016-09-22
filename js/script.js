@@ -47,7 +47,7 @@ function search (){
     function(data){
       //Make variable "nextPageToken", and "previousPageToken" to make them equal to next and last data and excute them by next and prev buttons
        var nextPageToken = data.nextPageToken;
-       var prexPageToken = data.prevPageToken;
+       var prevPageToken = data.prevPageToken;
       console.log(data);
     //using each loop to show each items (wich contains 5 array) from the youtube data
     //this each loop is a callBack from response data to tell what to do with data callBack
@@ -59,6 +59,10 @@ function search (){
       //display result after getting output
       $('#results').append(output);//output is defined in below
       });
+    var buttons = getButtons(prevPageToken, nextPageToken);
+
+    //display buttons
+    $('#buttons').append(buttons);
     }
   );
 }
