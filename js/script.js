@@ -99,8 +99,8 @@ function getOutput (item){
 function getButtons(prevPageToken, nextPageToken){
   if (!previousPageToken) {
     vat btnoutput = '<div class ="button-container">'+
-          'button id= "next-button" class= "paging-button" data-token="'+nextPageToken+'" data-query= "'q'">'+
-          
-    ;
+          'button id= "next-button" class= "paging-button" data-token="'+nextPageToken+'" data-query= "'q'"'+
+          'onclick = "nextPage();"></button>';
+    
   }
 }
