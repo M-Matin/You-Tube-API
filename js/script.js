@@ -93,3 +93,14 @@ function getOutput (item){
   '';
   return output;
 }
+
+//For button
+
+function getButtons(prevPageToken, nextPageToken){
+  if (!previousPageToken) {
+    vat btnoutput = '<div class ="button-container">'+
+          'button id= "next-button" class= "paging-button" data-token="'+nextPageToken+'" data-query= "'q'">'+
+          
+    ;
+  }
+}
