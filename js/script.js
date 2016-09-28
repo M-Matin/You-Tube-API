@@ -96,11 +96,11 @@ function getOutput (item){
 
 //For button
 
-function getButtons(prevPageToken, nextPageToken){
-  if (!previousPageToken) {
-    vat btnoutput = '<div class ="button-container">'+
-          'button id= "next-button" class= "paging-button" data-token="'+nextPageToken+'" data-query= "'q'"'+
-          'onclick = "nextPage();"></button>';
-    
-  }
-}
+// function getButtons(prevPageToken, nextPageToken){
+//   if (!previousPageToken) {
+//     vat btnoutput = '<div class ="button-container">'+
+//           'button id= "next-button" class= "paging-button" data-token="'+nextPageToken+' " data-query= " 'q' "'+
+//           'onclick = "nextPage();">Next Page</button></div>';
+//
+//   }
+// }
