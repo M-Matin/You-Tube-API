@@ -79,19 +79,20 @@ function getOutput (item){
   var videoDate = item.snippet.publishedAt;
   //build output string
   //the way you want all the info apear in #result
-  var output = "<li>" +
-  '<div class = list-left> ' +
-  '<img src="'+ thumb +'">' +
-  '</div>'+
-  '<div class = "list-right">' +
-  '<h3>'+title+'</h3>'+
-  '<small>by<span class="cTitle"'+channelTitle+'</span> on '+videoDate+'</small>'+
-  '<p>'+description+'</p>'+
+  var output = '<li>' + //make a list
+  '<div class = "list-left">' + //inside list make a div with class of list-left
+  //img tag with the address of variable thumb (defined at the first of output function), location of thumb image
+  '<img src = "'+ thumb +'">' + //the way we write this line is because we wanted to concatnate thumb variable in the address of image
+  '</div>' +
+  '<div class = "list-right">' + //making list-right div
+  '<h3>'+ title +'</h3>' //adding title of data from data snippet
+  '<small>by<span class = "cTitle">'+ channelTitle +'</span> on '+ videoDate +'</small>' + //adding channelTitle into the small tag
+  '<p>'+ description +'</p>' +//add description in to a paragraph
   '</div>' +
   '</li>' +
-  '<div class= "clearfix"</div>'+
+  '<div class ="clearfix"></div>' +
   '';
-  return output;
+    return output;
 }
 
 //For button
