@@ -46,6 +46,7 @@ function search (){
     //getJSON always comes in a way wich cary anonymos function to manepulate data
     function(data){
       //Make variable "nextPageToken", and "previousPageToken" to make them equal to next and last data and excute them by next and prev buttons
+      //nextPageToken and previousPageToken are parameter  identifies a specific page in the result set that should be returned from the youtubr API
        var nextPageToken = data.nextPageToken;
        var prevPageToken = data.prevPageToken;
       console.log(data);
