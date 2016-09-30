@@ -60,7 +60,8 @@ function search (){
       //display result after getting output
       $('#results').append(output);//output is defined in below
       });
-    // var buttons = getButtons(prevPageToken, nextPageToken);
+      //pasing prevPageToken & nextPageToken to the getButtons function which is defined at line 100
+    var buttons = getButtons(prevPageToken, nextPageToken);
 
     //display buttons
     // $('#buttons').append(buttons);
@@ -97,12 +98,12 @@ function getOutput (item){
 }
 
 //For button
+function getButtons(prevPageToken, nextPageToken){
+//if there is no previousPageToken creat btnoutput and make a div with button
+  if (!previousPageToken) {
+    var btnoutput = '<div class ="button-container">'+
+          '<button id= "next-button" class= "paging-button" data-token="'+nextPageToken+'" data-query= " 'q' "'+
+          'onclick = "nextPage();"> Next Page</button></div>';
 
-// function getButtons(prevPageToken, nextPageToken){
-//   if (!previousPageToken) {
-//     vat btnoutput = '<div class ="button-container">'+
-//           'button id= "next-button" class= "paging-button" data-token="'+nextPageToken+' " data-query= " 'q' "'+
-//           'onclick = "nextPage();">Next Page</button></div>';
-//
-//   }
-// }
+  }
+}
