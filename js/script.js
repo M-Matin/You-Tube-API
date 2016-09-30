@@ -59,10 +59,10 @@ function search (){
       //display result after getting output
       $('#results').append(output);//output is defined in below
       });
-    var buttons = getButtons(prevPageToken, nextPageToken);
+    // var buttons = getButtons(prevPageToken, nextPageToken);
 
     //display buttons
-    $('#buttons').append(buttons);
+    // $('#buttons').append(buttons);
     }
   );
 }
@@ -85,14 +85,14 @@ function getOutput (item){
   '<img src = "'+ thumb +'">' + //the way we write this line is because we wanted to concatnate thumb variable in the address of image
   '</div>' +
   '<div class = "list-right">' + //making list-right div
-  '<h3>'+ title +'</h3>' //adding title of data from data snippet
+  '<h3>'+ title +'</h3>' + //adding title of data from data snippet
   '<small>by<span class = "cTitle">'+ channelTitle +'</span> on '+ videoDate +'</small>' + //adding channelTitle into the small tag
   '<p>'+ description +'</p>' +//add description in to a paragraph
   '</div>' +
   '</li>' +
   '<div class ="clearfix"></div>' +
   '';
-    return output;
+    return output ;
 }
 
 //For button
