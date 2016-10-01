@@ -99,11 +99,14 @@ function getOutput (item){
 
 //For button
 function getButtons(prevPageToken, nextPageToken){
-//if there is no previousPageToken creat btnoutput and make a div with button
-  if (!previousPageToken) {
+//if there is no previousPageToken creat container that holds the button
     var btnoutput = '<div class ="button-container">'+
           '<button id= "next-button" class= "paging-button" data-token="'+nextPageToken+'" data-query= " 'q' "'+
           'onclick = "nextPage();"> Next Page</button></div>';
-
+  //but if there is a previousPageToken then we want to incluse button as well
+  } else {
+    // var btnoutput = '<div class ="button-container">'+
+    //       '<button id= "next-button" class= "paging-button" data-token="'+nextPageToken+'" data-query= " 'q' "'+
+    //       'onclick = "nextPage();"> Next Page</button></div>';
   }
 }
