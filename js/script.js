@@ -105,8 +105,12 @@ function getButtons(prevPageToken, nextPageToken){
           'onclick = "nextPage();"> Next Page</button></div>';
   //but if there is a previousPageToken then we want to incluse button as well
   } else {
-    // var btnoutput = '<div class ="button-container">'+
-    //       '<button id= "next-button" class= "paging-button" data-token="'+nextPageToken+'" data-query= " 'q' "'+
-    //       'onclick = "nextPage();"> Next Page</button></div>';
+    var btnoutput = '<div class ="button-container">'+
+          '<button id= "next-button" class= "paging-button" data-token="'+prevPageToken+'" data-query= " 'q' "'+
+          'onclick = "prevPage();"> Prev Page Page</button>'+
+          '<button id= "next-button" class= "paging-button" data-token="'+nextPageToken+'" data-query= " 'q' "'+
+          'onclick = "nextPage();"> Next Page</button></div>';
   }
+
+  return btnoutput ;
 }
