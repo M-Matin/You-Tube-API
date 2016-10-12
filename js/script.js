@@ -46,7 +46,11 @@ function search (){
 
 
   //run Get Request on API
-  $.getJSON("https://www.googleapis.com/youtube/v3/search?part=snippet&q=q&type=video%2Cchannel%2Cplaylist&key=AIzaSyAk59PuGj3pkTEeyyktVe25uX0VqjvlDCQ",
+  $.getJSON("https://www.googleapis.com/youtube/v3/search",{ //http request
+			part: 'snippet, id',// parameter that includes which part of snippet with ID we want to have in result
+			q: q, //q means query that is string. In this case we make it equal to the string that is passed in the search box (var q is defind at the begining of search function)
+			type:'video', //which type of result we are looking for
+			key: 'AIzaSyAk59PuGj3pkTEeyyktVe25uX0VqjvlDCQ'},//API key which is specific for each user
     //now pass data from upper request to data function
     //getJSON always comes in a way wich cary anonymos function to manepulate data
     function(data){
