@@ -40,7 +40,9 @@ function search (){
   //clear result means to make results area and button equal to empty for each time we search something new clear last search result
   $('#results').html('');
   $('#buttons').html('');
-  var q = $('#query').val();
+
+
+   q = $('#query').val();
 
 
   //run Get Request on API
@@ -102,19 +104,18 @@ function getOutput (item){
 
 //For button
 function getButtons(prevPageToken, nextPageToken){
-//if there is no previousPageToken creat container that holds the button
-  if(!prevPageToken){
-    var btnoutput = '<div class ="button-container">'+
-          '<button id= "next-button" class= "paging-button" data-token="'+ nextPageToken +'" data-query= " '+ q+ ' "'+
-          'onclick = "nextPage();"> Next Page</button></div>';
-  //but if there is a previousPageToken then we want to incluse button as well
+  //if there is no previousPageToken creat container that holds the button
+	if(!prevPageToken){
+		var btnoutput = '<div class="button-container">'+'<button id="next-button" class="paging-button" data-token="'+nextPageToken+'" data-query="'+q+'"' +
+		'onclick="nextPage();">Next Page</button></div>';
+   //but if there is a previousPageToken then we want to incluse button as well
   } else {
-    var btnoutput = '<div class ="button-container">'+
-          '<button id= "next-button" class= "paging-button" data-token="'+ prevPageToken +'" data-query= " '+ q +' "'+
-          'onclick = "prevPage();"> Prev Page Page</button>'+
-          '<button id= "next-button" class= "paging-button" data-token="'+ nextPageToken +'" data-query= " '+ q +' "'+
-          'onclick = "nextPage();"> Next Page</button></div>';
-  }
+		var btnoutput = '<div class="button-container">'+
+		'<button id="prev-button" class="paging-button" data-token="'+prevPageToken+'" data-query="'+q+'"' +
+		'onclick="prevPage();">Prev Page</button>' +
+		'<button id="next-button" class="paging-button" data-token="'+nextPageToken+'" data-query="'+q+'"' +
+		'onclick="nextPage();">Next Page</button></div>';
+	}
 
-  return btnoutput ;
+	return btnoutput;
 }
