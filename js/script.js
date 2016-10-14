@@ -77,6 +77,45 @@ function search (){
     }
   );
 }
+//_ _ _ _ _ _ _ _ _ _  _ _ _ - _ - _ _ - - -
+//next page function which is basicaly exactly like search function
+function nextPage(){
+  var token = $('#next-button').data('token');
+  //clear result means to make results area and button equal to empty for each time we search something new clear last search result
+  $('#results').html('');
+  $('#buttons').html('');
+   q = $('#query').val();
+  //run Get Request on API
+  $.getJSON("https://www.googleapis.com/youtube/v3/search",{ //http request
+			part: 'snippet, id',// parameter that includes which part of snippet with ID we want to have in result
+			q: q, //q means query that is string. In this case we make it equal to the string that is passed in the search box (var q is defind at the begining of search function)
+			type:'video', //which type of result we are looking for
+			key: 'AIzaSyAk59PuGj3pkTEeyyktVe25uX0VqjvlDCQ'},//API key which is specific for each user
+    //now pass data from upper request to data function
+    //getJSON always comes in a way wich cary anonymos function to manepulate data
+    function(data){
+      //Make variable "nextPageToken", and "previousPageToken" to make them equal to next and prev data and excute them by next and prev buttons
+      //nextPageToken and previousPageToken are parameter  identifies a specific page in the result set that should be returned from the youtubr API
+       var nextPageToken = data.nextPageToken;
+       var prevPageToken = data.prevPageToken;
+      console.log(data);
+    //using each loop to show each items (wich contains 5 array) from the youtube data
+    //this each loop is a callBack from response data to tell what to do with data callBack
+    //this form of writting each loop is to call array with name items and choose the data of that array
+      $.each(data.items, function(i, item){
+      //Building HTML output
+      //custom fuction for data output wich created seperatly later but use it here
+      var output = getOutput(item);
+      //display result after getting output
+      $('#results').append(output);//output is defined in below
+      });
+      //pasing prevPageToken & nextPageToken to the getButtons function which is defined at line 100
+    var buttons = getButtons(prevPageToken, nextPageToken);
+    //display buttons
+    $('#buttons').append(buttons);
+    }
+  );
+}
 
 //building getOutput wich is going to be run in each loop
 function getOutput (item){
