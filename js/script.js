@@ -182,7 +182,7 @@ function getOutput (item){
   '<img src = "'+ thumb +'">' + //the way we write this line is because we wanted to concatnate thumb variable in the address of image
   '</div>' +
   '<div class = "list-right">' + //making list-right div
-  '<h3>'+ title +'</h3>' + //adding title of data from data snippet
+  '<h3><a class="fancybox fancybox.iframe" href="http://www.youtube.com/embed/'+ videoId +'">'+ title +'</a></h3>' + //adding title of data from data snippet
   '<small>by<span class = "cTitle">'+ channelTitle +'</span> on '+ videoDate +'</small>' + //adding channelTitle into the small tag
   '<p>'+ description +'</p>' +//add description in to a paragraph
   '</div>' +
