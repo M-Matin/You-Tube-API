@@ -80,7 +80,10 @@ function search (){
 //_ _ _ _ _ _ _ _ _ _  _ _ _ - _ - _ _ - - -
 //next page function which is basicaly exactly like search function
 function nextPage(){
+  //The data() method attaches data to, or gets data from, selected elements
   var token = $('#next-button').data('token');
+  var q = $('#next-button').data('query');
+
   //clear result means to make results area and button equal to empty for each time we search something new clear last search result
   $('#results').html('');
   $('#buttons').html('');
@@ -89,7 +92,8 @@ function nextPage(){
   $.getJSON("https://www.googleapis.com/youtube/v3/search",{ //http request
 			part: 'snippet, id',// parameter that includes which part of snippet with ID we want to have in result
 			q: q, //q means query that is string. In this case we make it equal to the string that is passed in the search box (var q is defind at the begining of search function)
-			type:'video', //which type of result we are looking for
+      pageToken : token,//token is defined at the begining of this function
+      type:'video', //which type of result we are looking for
 			key: 'AIzaSyAk59PuGj3pkTEeyyktVe25uX0VqjvlDCQ'},//API key which is specific for each user
     //now pass data from upper request to data function
     //getJSON always comes in a way wich cary anonymos function to manepulate data
