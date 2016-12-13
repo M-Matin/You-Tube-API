@@ -19,10 +19,10 @@ $(function(){
       if(searchField.val() == ''){ //if searchField doesn't have any string make the animation
         $(searchField).animate({ //animation for searchField
           width:'45%'
-        },400);
+        },400, function(){});
         $(icon).animate({ //animation for icon
           right:'360px'
-        },400);
+        },400, function(){});
 
       }
     });

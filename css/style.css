@@ -94,7 +94,7 @@ footer{
 	zoom:1;
 	filter:alpha(opacity=65);
 	opacity:0.65;
-	background:transparent url(../img/search.png) top left no-repeat;s
+	background:transparent url(../img/search.png) top left no-repeat;
 }
 
 #search-btn:hover{
